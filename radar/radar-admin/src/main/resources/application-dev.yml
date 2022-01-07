@@ -1,9 +1,9 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://root:123456@192.168.159.129:27017/radar?authSource=admin&authMechanism=SCRAM-SHA-1
+      uri: mongodb://admin:123456@192.168.159.131:27017/radar?authSource=admin&authMechanism=SCRAM-SHA-1
       password: 123456
-      username: root
+      username: admin
   datasource:
     url: jdbc:mysql://ec2-54-215-140-4.us-west-1.compute.amazonaws.com:4000/radar?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
@@ -26,7 +26,7 @@ elasticsearch:
 #  pool-size: 5
 #  cluster:
 #    name: elasticsearch
-  url: http://192.168.159.129:9200
+  url: http://192.168.159.131:9200
   username:  # 不存在就留空
   password:  #
 sys:

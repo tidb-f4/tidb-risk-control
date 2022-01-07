@@ -1,34 +1,36 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:123456@127.0.0.1:27017/radar
+      uri: mongodb://admin:123456@192.168.159.131:27017/radar?authSource=admin&authMechanism=SCRAM-SHA-1
+      password: 123456
+      username: admin
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/radar?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://ec2-54-215-140-4.us-west-1.compute.amazonaws.com:4000/radar?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: 123456
+    password:
     druid:
       stat-view-servlet:
         enabled: true
         login-username: admin
         login-password: 123456
   redis:
-    host: 127.0.0.1
-    password: 123456
+    host: 192.168.159.131
+    password:
     timeout: 2000ms
     database: 1  #默认有16个db(集群模式用hash槽代替)，这里配置具体使用的db，默认是0
 mobile:
   info:
-    path: /radar/resources/moble_info.csv # 手机号码归属地文件
+    path: D:\\Radar/moble_info.csv # 手机号码归属地文件
 ip2region:
   db:
-    path: /radar/resources/ip2region.db # IP地址库文件
+    path: D:\\Radar/ip2region.db # IP地址库文件
 elasticsearch:
-  ip: 127.0.0.1
-  port: 9300
-  pool-size: 5
-  cluster:
-    name: elasticsearch
-  url: http://127.0.0.1:9200
+#  ip: 127.0.0.1
+#  port: 9300
+#  pool-size: 5
+#  cluster:
+#    name: elasticsearch
+  url: http://192.168.159.131:9200
   username: # 不存在就留空
   password:
 sys:
